@@ -18,12 +18,15 @@ class TodoListViewController: UITableViewController {
 
         let newItem = Item()
         newItem.title = "Find One Piece"
+        itemArray.append(newItem)
         
         let newItem1 = Item()
         newItem1.title = "Eat Meat"
+        itemArray.append(newItem1)
         
         let newItem2 = Item()
         newItem2.title = "Sing Songs"
+        itemArray.append(newItem2)
         
         if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
             itemArray = items
