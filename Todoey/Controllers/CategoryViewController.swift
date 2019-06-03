@@ -7,17 +7,23 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
+import ChameleonFramework
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var categoriesArray = [Category]()
+    let realm = try! Realm()
+    
+    var categories: Results<Category>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         loadCategories()
+        
+        tableView.rowHeight = 80.0
+        
+        tableView.separatorStyle = .none
         
     }
     
@@ -28,13 +34,12 @@ class CategoryViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
-            let category = Category(context: self.context)
+            let category = Category()
             
             category.name = textField.text!
+            category.colour = UIColor.randomFlat.hexValue()
             
-            self.categoriesArray.append(category)
-            
-            self.saveCategories()
+            self.save(category: category)
             
         }
         
@@ -52,16 +57,17 @@ class CategoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        let category = categoriesArray[indexPath.row]
-        
-        cell.textLabel?.text = category.name
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
+        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].colour ?? "0096FF")
+        cell.textLabel?.textColor = ContrastColorOf(cell.backgroundColor!, returnFlat: true)
         
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesArray.count
+        return categories?.count ?? 1
     }
     
     //MARK: - TableView Delegate Methods
@@ -74,7 +80,7 @@ class CategoryViewController: UITableViewController {
         let destinationVC = segue.destination as!  TodoListViewController
       
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = categoriesArray[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
         }
         
     }
@@ -82,28 +88,38 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - Data Manipulation Methods
     
-    func loadCategories(with request: NSFetchRequest<Category> = Category.fetchRequest()) {
+    func loadCategories() {
         
-        do {
-            categoriesArray = try context.fetch(request)
-        } catch {
-            print("Error fetching category data from context ")
-            print(error)
-        }
-        
+        categories = realm.objects(Category.self)
+    
         tableView.reloadData()
     }
     
-    func saveCategories() {
+    func save(category: Category) {
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(category)
+            }
         } catch {
             print("Error saving categories context")
             print(error)
         }
         
         tableView.reloadData()
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let categoryForDeletion = self.categories?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(categoryForDeletion)
+                }
+            } catch {
+                print("Error deleting categories context")
+                print(error)
+            }
+        }
     }
     
 }
