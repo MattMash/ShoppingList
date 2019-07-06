@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Todoey
+//  ShoppingList
 //
 //  Created by Matthew Mashiane on 2019/05/30.
 //  Copyright © 2019 Matthew Mashiane. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  CategoryViewController.swift
-//  Todoey
+//  ShoppingList
 //
 //  Created by Matthew Mashiane on 2019/06/01.
 //  Copyright © 2019 Matthew Mashiane. All rights reserved.
@@ -10,11 +10,11 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 
-class CategoryViewController: SwipeTableViewController {
+class ShopListViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
-    var categories: Results<Category>?
+    var shops: Results<Shop>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,10 @@ class CategoryViewController: SwipeTableViewController {
         
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add New Shop", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
-            let category = Category()
+            let category = Shop()
             
             category.name = textField.text!
             category.colour = UIColor.randomFlat.hexValue()
@@ -45,7 +45,7 @@ class CategoryViewController: SwipeTableViewController {
         
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Category name"
+            alertTextField.placeholder = "Shop name"
             textField = alertTextField
         }
         
@@ -58,8 +58,8 @@ class CategoryViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
-        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].colour ?? "0096FF")
+        cell.textLabel?.text = shops?[indexPath.row].name ?? "No Shops Added Yet"
+        cell.backgroundColor = UIColor(hexString: shops?[indexPath.row].colour ?? "0096FF")
         cell.textLabel?.textColor = ContrastColorOf(cell.backgroundColor!, returnFlat: true)
         
         return cell
@@ -67,7 +67,7 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories?.count ?? 1
+        return shops?.count ?? 1
     }
     
     //MARK: - TableView Delegate Methods
@@ -77,10 +77,10 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as!  TodoListViewController
+        let destinationVC = segue.destination as!  ShoppingItemViewController
       
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = categories?[indexPath.row]
+            destinationVC.selectedCategory = shops?[indexPath.row]
         }
         
     }
@@ -90,12 +90,12 @@ class CategoryViewController: SwipeTableViewController {
     
     func loadCategories() {
         
-        categories = realm.objects(Category.self)
+        shops = realm.objects(Shop.self)
     
         tableView.reloadData()
     }
     
-    func save(category: Category) {
+    func save(category: Shop) {
         
         do {
             try realm.write {
@@ -110,7 +110,7 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     override func updateModel(at indexPath: IndexPath) {
-        if let categoryForDeletion = self.categories?[indexPath.row] {
+        if let categoryForDeletion = self.shops?[indexPath.row] {
             do {
                 try self.realm.write {
                     self.realm.delete(categoryForDeletion)

@@ -9,30 +9,33 @@
 /* Begin PBXBuildFile section */
 		15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C735C722A5961C00079237 /* SwipeTableViewController.swift */; };
 		15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39422A0639D004576CF /* AppDelegate.swift */; };
-		15C9F39722A0639D004576CF /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39622A0639D004576CF /* TodoListViewController.swift */; };
+		15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */; };
 		15C9F39A22A0639D004576CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C9F39822A0639D004576CF /* Main.storyboard */; };
 		15C9F39C22A0639F004576CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15C9F39B22A0639F004576CF /* Assets.xcassets */; };
 		15C9F39F22A0639F004576CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C9F39D22A0639F004576CF /* LaunchScreen.storyboard */; };
-		15C9F3F322A2EC70004576CF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F3F222A2EC70004576CF /* CategoryViewController.swift */; };
+		15C9F3F322A2EC70004576CF /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F3F222A2EC70004576CF /* ShopListViewController.swift */; };
 		15C9F3F522A321D1004576CF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F3F422A321D1004576CF /* Item.swift */; };
-		15C9F3F722A3266D004576CF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F3F622A3266D004576CF /* Category.swift */; };
-		BE8A0AAA0B5537D0979287A4 /* Pods_Todoey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612EAD5FF4472B38F0CB5024 /* Pods_Todoey.framework */; };
+		15C9F3F722A3266D004576CF /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F3F622A3266D004576CF /* Shop.swift */; };
+		798F5DAC648343F450CA54D9 /* Pods_ShoppingList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542380DBEA5C355F584BF42E /* Pods_ShoppingList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		15C735C722A5961C00079237 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
-		15C9F39122A0639D004576CF /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C9F39122A0639D004576CF /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C9F39422A0639D004576CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		15C9F39622A0639D004576CF /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemViewController.swift; sourceTree = "<group>"; };
 		15C9F39922A0639D004576CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15C9F39B22A0639F004576CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15C9F39E22A0639F004576CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15C9F3A022A0639F004576CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15C9F3F222A2EC70004576CF /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		15C9F3F222A2EC70004576CF /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		15C9F3F422A321D1004576CF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		15C9F3F622A3266D004576CF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		15C9F3F622A3266D004576CF /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		1D45CAC83FBE0006F4B36640 /* Pods-ShoppingList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingList/Pods-ShoppingList.debug.xcconfig"; sourceTree = "<group>"; };
 		3F59BFBC2402D8EE96F665A4 /* Pods-Todoey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.debug.xcconfig"; sourceTree = "<group>"; };
+		542380DBEA5C355F584BF42E /* Pods_ShoppingList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		612EAD5FF4472B38F0CB5024 /* Pods_Todoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C9AEC8FCE4E1D879311ADB /* Pods-ShoppingList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingList/Pods-ShoppingList.release.xcconfig"; sourceTree = "<group>"; };
 		D020F1CCBA0128752B294344 /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE8A0AAA0B5537D0979287A4 /* Pods_Todoey.framework in Frameworks */,
+				798F5DAC648343F450CA54D9 /* Pods_ShoppingList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +54,7 @@
 		15C9F38822A0639D004576CF = {
 			isa = PBXGroup;
 			children = (
-				15C9F39322A0639D004576CF /* Todoey */,
+				15C9F39322A0639D004576CF /* ShoppingList */,
 				15C9F39222A0639D004576CF /* Products */,
 				4301300120CEBB7EEFE2638F /* Pods */,
 				DC8C915436B8A11D090DE9B9 /* Frameworks */,
@@ -61,12 +64,12 @@
 		15C9F39222A0639D004576CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				15C9F39122A0639D004576CF /* Todoey.app */,
+				15C9F39122A0639D004576CF /* ShoppingList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		15C9F39322A0639D004576CF /* Todoey */ = {
+		15C9F39322A0639D004576CF /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
 				15C9F3CC22A27CBC004576CF /* Views */,
@@ -76,14 +79,14 @@
 				15C9F39422A0639D004576CF /* AppDelegate.swift */,
 				15C9F3A022A0639F004576CF /* Info.plist */,
 			);
-			path = Todoey;
+			path = ShoppingList;
 			sourceTree = "<group>";
 		};
 		15C9F3C822A27C78004576CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				15C9F3F422A321D1004576CF /* Item.swift */,
-				15C9F3F622A3266D004576CF /* Category.swift */,
+				15C9F3F622A3266D004576CF /* Shop.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,8 +94,8 @@
 		15C9F3CB22A27CB4004576CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				15C9F3F222A2EC70004576CF /* CategoryViewController.swift */,
-				15C9F39622A0639D004576CF /* TodoListViewController.swift */,
+				15C9F3F222A2EC70004576CF /* ShopListViewController.swift */,
+				15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */,
 				15C735C722A5961C00079237 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
@@ -120,6 +123,8 @@
 			children = (
 				3F59BFBC2402D8EE96F665A4 /* Pods-Todoey.debug.xcconfig */,
 				D020F1CCBA0128752B294344 /* Pods-Todoey.release.xcconfig */,
+				1D45CAC83FBE0006F4B36640 /* Pods-ShoppingList.debug.xcconfig */,
+				B1C9AEC8FCE4E1D879311ADB /* Pods-ShoppingList.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				612EAD5FF4472B38F0CB5024 /* Pods_Todoey.framework */,
+				542380DBEA5C355F584BF42E /* Pods_ShoppingList.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,23 +141,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		15C9F39022A0639D004576CF /* Todoey */ = {
+		15C9F39022A0639D004576CF /* ShoppingList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15C9F3A322A0639F004576CF /* Build configuration list for PBXNativeTarget "Todoey" */;
+			buildConfigurationList = 15C9F3A322A0639F004576CF /* Build configuration list for PBXNativeTarget "ShoppingList" */;
 			buildPhases = (
 				FEAD3DC0355F8ED6A7AC569C /* [CP] Check Pods Manifest.lock */,
 				15C9F38D22A0639D004576CF /* Sources */,
 				15C9F38E22A0639D004576CF /* Frameworks */,
 				15C9F38F22A0639D004576CF /* Resources */,
-				E27789FBCA2E68A9591A6A66 /* [CP] Embed Pods Frameworks */,
+				540352BC1392C1CEA2E2590D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Todoey;
+			name = ShoppingList;
 			productName = Todoey;
-			productReference = 15C9F39122A0639D004576CF /* Todoey.app */;
+			productReference = 15C9F39122A0639D004576CF /* ShoppingList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +175,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 15C9F38C22A0639D004576CF /* Build configuration list for PBXProject "Todoey" */;
+			buildConfigurationList = 15C9F38C22A0639D004576CF /* Build configuration list for PBXProject "ShoppingList" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15C9F39022A0639D004576CF /* Todoey */,
+				15C9F39022A0639D004576CF /* ShoppingList */,
 			);
 		};
 /* End PBXProject section */
@@ -201,7 +207,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E27789FBCA2E68A9591A6A66 /* [CP] Embed Pods Frameworks */ = {
+		540352BC1392C1CEA2E2590D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,7 +215,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Todoey/Pods-Todoey-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingList/Pods-ShoppingList-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -226,7 +232,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Todoey/Pods-Todoey-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingList/Pods-ShoppingList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEAD3DC0355F8ED6A7AC569C /* [CP] Check Pods Manifest.lock */ = {
@@ -244,7 +250,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Todoey-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShoppingList-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -258,12 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C9F3F322A2EC70004576CF /* CategoryViewController.swift in Sources */,
+				15C9F3F322A2EC70004576CF /* ShopListViewController.swift in Sources */,
 				15C9F3F522A321D1004576CF /* Item.swift in Sources */,
-				15C9F39722A0639D004576CF /* TodoListViewController.swift in Sources */,
+				15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */,
 				15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */,
 				15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */,
-				15C9F3F722A3266D004576CF /* Category.swift in Sources */,
+				15C9F3F722A3266D004576CF /* Shop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -395,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -407,17 +413,17 @@
 		};
 		15C9F3A422A0639F004576CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F59BFBC2402D8EE96F665A4 /* Pods-Todoey.debug.xcconfig */;
+			baseConfigurationReference = 1D45CAC83FBE0006F4B36640 /* Pods-ShoppingList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NFJ3DTH22X;
-				INFOPLIST_FILE = Todoey/Info.plist;
+				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewmashiane.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewmashiane.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,17 +432,17 @@
 		};
 		15C9F3A522A0639F004576CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D020F1CCBA0128752B294344 /* Pods-Todoey.release.xcconfig */;
+			baseConfigurationReference = B1C9AEC8FCE4E1D879311ADB /* Pods-ShoppingList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NFJ3DTH22X;
-				INFOPLIST_FILE = Todoey/Info.plist;
+				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewmashiane.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewmashiane.ShoppingList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,7 +452,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		15C9F38C22A0639D004576CF /* Build configuration list for PBXProject "Todoey" */ = {
+		15C9F38C22A0639D004576CF /* Build configuration list for PBXProject "ShoppingList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15C9F3A122A0639F004576CF /* Debug */,
@@ -455,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15C9F3A322A0639F004576CF /* Build configuration list for PBXNativeTarget "Todoey" */ = {
+		15C9F3A322A0639F004576CF /* Build configuration list for PBXNativeTarget "ShoppingList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15C9F3A422A0639F004576CF /* Debug */,

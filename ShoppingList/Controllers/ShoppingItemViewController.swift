@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Todoey
+//  ShoppingList
 //
 //  Created by Matthew Mashiane on 2019/05/30.
 //  Copyright © 2019 Matthew Mashiane. All rights reserved.
@@ -10,13 +10,13 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 
-class TodoListViewController: SwipeTableViewController {
+class ShoppingItemViewController: SwipeTableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     var items: Results<Item>?
     let realm = try! Realm()
     
-    var selectedCategory: Category? {
+    var selectedCategory: Shop? {
         didSet {
             loadItems()
         }
@@ -99,7 +99,7 @@ class TodoListViewController: SwipeTableViewController {
         
         var textField = UITextField()
 
-        let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
             if let currentCategory = self.selectedCategory {
@@ -165,7 +165,7 @@ class TodoListViewController: SwipeTableViewController {
 
 // Mark: - Searchbar methods
 
-extension TodoListViewController: UISearchBarDelegate {
+extension ShoppingItemViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
