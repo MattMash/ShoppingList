@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15348C4C22D1000600E61B5A /* ShopListColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C4B22D1000600E61B5A /* ShopListColours.swift */; };
+		15348C4E22D1194F00E61B5A /* SwipeActionMak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */; };
+		15348C5322D1253C00E61B5A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */; };
 		15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C735C722A5961C00079237 /* SwipeTableViewController.swift */; };
 		15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39422A0639D004576CF /* AppDelegate.swift */; };
 		15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15348C4B22D1000600E61B5A /* ShopListColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListColours.swift; sourceTree = "<group>"; };
+		15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionMak.swift; sourceTree = "<group>"; };
+		15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		15C735C722A5961C00079237 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		15C9F39122A0639D004576CF /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C9F39422A0639D004576CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15348C4F22D11CE800E61B5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		15C9F38822A0639D004576CF = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +86,7 @@
 		15C9F39322A0639D004576CF /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				15348C4F22D11CE800E61B5A /* Extensions */,
 				15C9F3CC22A27CBC004576CF /* Views */,
 				15C9F3CB22A27CB4004576CF /* Controllers */,
 				15C9F3C822A27C78004576CF /* Models */,
@@ -87,6 +102,8 @@
 			children = (
 				15C9F3F422A321D1004576CF /* Item.swift */,
 				15C9F3F622A3266D004576CF /* Shop.swift */,
+				15348C4B22D1000600E61B5A /* ShopListColours.swift */,
+				15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +285,9 @@
 				15C9F3F522A321D1004576CF /* Item.swift in Sources */,
 				15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */,
 				15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */,
+				15348C4E22D1194F00E61B5A /* SwipeActionMak.swift in Sources */,
+				15348C4C22D1000600E61B5A /* ShopListColours.swift in Sources */,
+				15348C5322D1253C00E61B5A /* UIImage+Extensions.swift in Sources */,
 				15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */,
 				15C9F3F722A3266D004576CF /* Shop.swift in Sources */,
 			);

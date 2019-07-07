@@ -16,7 +16,7 @@ class ShoppingItemViewController: SwipeTableViewController {
     var items: Results<Item>?
     let realm = try! Realm()
     
-    var selectedCategory: Shop? {
+    var selectedShop: Shop? {
         didSet {
             loadItems()
         }
@@ -24,6 +24,7 @@ class ShoppingItemViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.swipeActions = SwipeActionMask.delete
         tableView.separatorStyle = .none
         tableView.rowHeight = 80.0
         
@@ -34,13 +35,17 @@ class ShoppingItemViewController: SwipeTableViewController {
             fatalError()
         }
         
-        if let colourHex = selectedCategory?.colour {
-            title = selectedCategory!.name
+        if let colourHex = selectedShop?.colour {
+            title = selectedShop!.name
             if let navBarColour = UIColor(hexString: colourHex){
                 navBar.barTintColor = navBarColour
                 navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
                 navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColour, returnFlat: true)]
-                searchBar.tintColor = navBarColour
+                searchBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
+                searchBar.barTintColor = navBarColour
+                searchBar.backgroundColor = navBarColour
+                searchBar.delegate = self
+                
             }
         }
     }
@@ -66,7 +71,7 @@ class ShoppingItemViewController: SwipeTableViewController {
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
             
-            if let colour = UIColor(hexString: selectedCategory!.colour)?.darken(byPercentage: CGFloat(indexPath.row)/CGFloat(items!.count)) {
+            if let colour = UIColor(hexString: selectedShop!.colour)?.darken(byPercentage: CGFloat(indexPath.row)/CGFloat(max(10,items!.count))) {
                 cell.backgroundColor = colour
                 cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
             }
@@ -102,7 +107,7 @@ class ShoppingItemViewController: SwipeTableViewController {
         let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
-            if let currentCategory = self.selectedCategory {
+            if let currentCategory = self.selectedShop {
                 do {
                     try self.realm.write {
                         let newItem = Item()
@@ -119,8 +124,13 @@ class ShoppingItemViewController: SwipeTableViewController {
             
             self.tableView.reloadData()
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+            alert.dismiss(animated: true)
+        }
 
         alert.addAction(action)
+        alert.addAction(cancelAction)
         alert.addTextField { (alertTextfield) in
             alertTextfield.placeholder = "Item name"
             textField = alertTextfield
@@ -145,10 +155,10 @@ class ShoppingItemViewController: SwipeTableViewController {
     
     func loadItems() {
         
-        items = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        items = selectedShop?.items.sorted(byKeyPath: "title", ascending: true)
     }
     
-    override func updateModel(at indexPath: IndexPath) {
+    override func deleteModel(at indexPath: IndexPath) {
         if let itemForDeletion = self.items?[indexPath.row] {
             do {
                 try self.realm.write {
@@ -169,6 +179,9 @@ extension ShoppingItemViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
+        // Get all items first
+        loadItems()
+        
         items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
         
         tableView.reloadData()
@@ -176,13 +189,23 @@ extension ShoppingItemViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        loadItems()
         if searchBar.text?.count == 0 {
-            loadItems()
-
+            // Dont know if I want to do this
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
+        } else {
+            items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+            tableView.reloadData()
         }
     }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        tableView.reloadData()
+    }
+    
+    
+    
 }
 

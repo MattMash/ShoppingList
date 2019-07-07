@@ -10,6 +10,8 @@ import UIKit
 import SwipeCellKit
 
 class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegate {
+    
+    var swipeActions: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +27,30 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
+        guard let swipeActions = swipeActions  else { return nil }
         
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            // handle action by updating model with deletion
-            self.updateModel(at: indexPath)
-            
+        var actions = [SwipeAction]()
+        
+        if swipeActions & SwipeActionMask.delete == SwipeActionMask.delete {
+            let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+                // handle action by updating model with deletion
+                self.deleteModel(at: indexPath)
+            }
+            deleteAction.image = UIImage(named: "delete")
+            actions.append(deleteAction)
         }
         
-        // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
+        if swipeActions & SwipeActionMask.changeColour == SwipeActionMask.changeColour {
+            let changeColourAction = SwipeAction(style: .default, title: "Colour") { action, indexPath in
+                let cell = self.tableView(self.tableView, cellForRowAt: indexPath) as! SwipeTableViewCell
+                self.updateModelColour(at: indexPath)
+            }
+            changeColourAction.image = UIImage(named: "colour")?.scaledWidth(to: 30.0)
+            changeColourAction.backgroundColor = UIColor.flatSkyBlue
+            actions.append(changeColourAction)
+        }
         
-        return [deleteAction]
+        return actions.count > 0 ? actions : nil
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
@@ -44,7 +59,12 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         return options
     }
     
-    func updateModel(at indexPath: IndexPath) {
+    func deleteModel(at indexPath: IndexPath) {
         
     }
+    
+    func updateModelColour(at indexPath: IndexPath) {
+        
+    }
+    
 }

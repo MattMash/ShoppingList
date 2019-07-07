@@ -18,11 +18,12 @@ class ShopListViewController: SwipeTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        swipeActions = SwipeActionMask.changeColour | SwipeActionMask.delete
     
-        loadCategories()
+        loadShops()
         
         tableView.rowHeight = 80.0
-        
         tableView.separatorStyle = .none
         
     }
@@ -34,16 +35,21 @@ class ShopListViewController: SwipeTableViewController {
         let alert = UIAlertController(title: "Add New Shop", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
-            let category = Shop()
+            let shop = Shop()
             
-            category.name = textField.text!
-            category.colour = UIColor.randomFlat.hexValue()
+            shop.name = textField.text!
+            shop.colour = UIColor.init(randomFlatColorOf: .light).hexValue()
             
-            self.save(category: category)
+            self.save(shop: shop)
             
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+            alert.dismiss(animated: true)
+        }
+        
         alert.addAction(action)
+        alert.addAction(cancelAction)
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Shop name"
             textField = alertTextField
@@ -80,7 +86,7 @@ class ShopListViewController: SwipeTableViewController {
         let destinationVC = segue.destination as!  ShoppingItemViewController
       
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = shops?[indexPath.row]
+            destinationVC.selectedShop = shops?[indexPath.row]
         }
         
     }
@@ -88,37 +94,52 @@ class ShopListViewController: SwipeTableViewController {
     
     //MARK: - Data Manipulation Methods
     
-    func loadCategories() {
+    func loadShops() {
         
         shops = realm.objects(Shop.self)
     
         tableView.reloadData()
     }
     
-    func save(category: Shop) {
+    func save(shop: Shop) {
         
         do {
             try realm.write {
-                realm.add(category)
+                realm.add(shop)
             }
         } catch {
-            print("Error saving categories context")
+            print("Error saving shops context")
             print(error)
         }
         
         tableView.reloadData()
     }
     
-    override func updateModel(at indexPath: IndexPath) {
-        if let categoryForDeletion = self.shops?[indexPath.row] {
+    override func deleteModel(at indexPath: IndexPath) {
+        if let shopForDeletion = self.shops?[indexPath.row] {
             do {
                 try self.realm.write {
-                    self.realm.delete(categoryForDeletion)
+                    self.realm.delete(shopForDeletion)
                 }
             } catch {
-                print("Error deleting categories context")
+                print("Error deleting shop context")
                 print(error)
             }
+        }
+    }
+    
+    override func updateModelColour(at indexPath: IndexPath) {
+        if let shopforUpdate = self.shops?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    shopforUpdate.colour = UIColor.init(randomFlatColorOf: .light).hexValue()
+                }
+            }  catch {
+                print("Error deleting shop context")
+                print(error)
+            }
+            
+            tableView.reloadData()
         }
     }
     
