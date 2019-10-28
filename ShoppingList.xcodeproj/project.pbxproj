@@ -7,9 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15348C4C22D1000600E61B5A /* ShopListColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C4B22D1000600E61B5A /* ShopListColours.swift */; };
 		15348C4E22D1194F00E61B5A /* SwipeActionMak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */; };
 		15348C5322D1253C00E61B5A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */; };
+		154380452345E97E00BA92DD /* ShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154380432345E97E00BA92DD /* ShopViewCell.swift */; };
+		154380462345E97E00BA92DD /* ShopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154380442345E97E00BA92DD /* ShopViewCell.xib */; };
+		1543804823473E9F00BA92DD /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1543804723473E9F00BA92DD /* ShopsViewController.swift */; };
+		1555CD4B234E0A5E006BB706 /* ShopListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD4A234E0A5E006BB706 /* ShopListProtocols.swift */; };
+		1555CD4E234E0B0D006BB706 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD4D234E0B0D006BB706 /* ShopModel.swift */; };
+		1555CD50234E0BBC006BB706 /* ShopItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD4F234E0BBC006BB706 /* ShopItemModel.swift */; };
+		1555CD52234E3A1F006BB706 /* ShopListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD51234E3A1F006BB706 /* ShopListPresenter.swift */; };
+		1555CD54234E3A5D006BB706 /* ShopListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD53234E3A5D006BB706 /* ShopListInteractor.swift */; };
+		1555CD56234E3D55006BB706 /* ShopListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD55234E3D55006BB706 /* ShopListLocalDataManager.swift */; };
+		1555CD5C234EF571006BB706 /* ShopListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD5B234EF571006BB706 /* ShopListRouter.swift */; };
+		1555CD5F234F890E006BB706 /* AddShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1555CD5D234F890E006BB706 /* AddShopCell.swift */; };
+		1555CD60234F890E006BB706 /* AddShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1555CD5E234F890E006BB706 /* AddShopCell.xib */; };
+		15779FF923632F3700777EE3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FF823632F3700777EE3 /* UIView+Extensions.swift */; };
+		15779FFD236509AA00777EE3 /* ShopImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FFC236509AA00777EE3 /* ShopImages.swift */; };
+		1577A0002365217400777EE3 /* SheepAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FFF2365217400777EE3 /* SheepAnimationView.swift */; };
+		1577A003236521B000777EE3 /* running-sheep.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1577A002236521B000777EE3 /* running-sheep.gif */; };
+		1577A0052365232000777EE3 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A0042365232000777EE3 /* LaunchViewController.swift */; };
 		15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C735C722A5961C00079237 /* SwipeTableViewController.swift */; };
 		15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39422A0639D004576CF /* AppDelegate.swift */; };
 		15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */; };
@@ -23,9 +39,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		15348C4B22D1000600E61B5A /* ShopListColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListColours.swift; sourceTree = "<group>"; };
 		15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionMak.swift; sourceTree = "<group>"; };
 		15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		154380432345E97E00BA92DD /* ShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewCell.swift; sourceTree = "<group>"; };
+		154380442345E97E00BA92DD /* ShopViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopViewCell.xib; sourceTree = "<group>"; };
+		1543804723473E9F00BA92DD /* ShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
+		1555CD4A234E0A5E006BB706 /* ShopListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListProtocols.swift; sourceTree = "<group>"; };
+		1555CD4D234E0B0D006BB706 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		1555CD4F234E0BBC006BB706 /* ShopItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemModel.swift; sourceTree = "<group>"; };
+		1555CD51234E3A1F006BB706 /* ShopListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListPresenter.swift; sourceTree = "<group>"; };
+		1555CD53234E3A5D006BB706 /* ShopListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListInteractor.swift; sourceTree = "<group>"; };
+		1555CD55234E3D55006BB706 /* ShopListLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListLocalDataManager.swift; sourceTree = "<group>"; };
+		1555CD5B234EF571006BB706 /* ShopListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListRouter.swift; sourceTree = "<group>"; };
+		1555CD5D234F890E006BB706 /* AddShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShopCell.swift; sourceTree = "<group>"; };
+		1555CD5E234F890E006BB706 /* AddShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddShopCell.xib; sourceTree = "<group>"; };
+		15779FF823632F3700777EE3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		15779FFC236509AA00777EE3 /* ShopImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopImages.swift; sourceTree = "<group>"; };
+		15779FFF2365217400777EE3 /* SheepAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheepAnimationView.swift; sourceTree = "<group>"; };
+		1577A002236521B000777EE3 /* running-sheep.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "running-sheep.gif"; sourceTree = "<group>"; };
+		1577A0042365232000777EE3 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		15C735C722A5961C00079237 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		15C9F39122A0639D004576CF /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C9F39422A0639D004576CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +93,101 @@
 			isa = PBXGroup;
 			children = (
 				15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */,
+				15779FF823632F3700777EE3 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1555CD44234E087E006BB706 /* ShopList */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD5A234EF518006BB706 /* Router */,
+				1555CD49234E0907006BB706 /* DataManager */,
+				1555CD48234E08ED006BB706 /* Protocols */,
+				1555CD47234E08E5006BB706 /* Presenter */,
+				1555CD46234E08D0006BB706 /* Interactor */,
+				1555CD45234E08AE006BB706 /* View */,
+			);
+			path = ShopList;
+			sourceTree = "<group>";
+		};
+		1555CD45234E08AE006BB706 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				154380432345E97E00BA92DD /* ShopViewCell.swift */,
+				154380442345E97E00BA92DD /* ShopViewCell.xib */,
+				1543804723473E9F00BA92DD /* ShopsViewController.swift */,
+				1555CD5D234F890E006BB706 /* AddShopCell.swift */,
+				1555CD5E234F890E006BB706 /* AddShopCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1555CD46234E08D0006BB706 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD53234E3A5D006BB706 /* ShopListInteractor.swift */,
+				15779FFC236509AA00777EE3 /* ShopImages.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1555CD47234E08E5006BB706 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD51234E3A1F006BB706 /* ShopListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1555CD48234E08ED006BB706 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD4A234E0A5E006BB706 /* ShopListProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1555CD49234E0907006BB706 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD55234E3D55006BB706 /* ShopListLocalDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		1555CD4C234E0AEF006BB706 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD4D234E0B0D006BB706 /* ShopModel.swift */,
+				1555CD4F234E0BBC006BB706 /* ShopItemModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1555CD5A234EF518006BB706 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1555CD5B234EF571006BB706 /* ShopListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		15779FFE2365213800777EE3 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				15779FFF2365217400777EE3 /* SheepAnimationView.swift */,
+				1577A0042365232000777EE3 /* LaunchViewController.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		1577A0012365219300777EE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1577A002236521B000777EE3 /* running-sheep.gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		15C9F38822A0639D004576CF = {
@@ -86,6 +211,10 @@
 		15C9F39322A0639D004576CF /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				1577A0012365219300777EE3 /* Resources */,
+				15779FFE2365213800777EE3 /* Launch */,
+				1555CD4C234E0AEF006BB706 /* Entities */,
+				1555CD44234E087E006BB706 /* ShopList */,
 				15348C4F22D11CE800E61B5A /* Extensions */,
 				15C9F3CC22A27CBC004576CF /* Views */,
 				15C9F3CB22A27CB4004576CF /* Controllers */,
@@ -102,7 +231,6 @@
 			children = (
 				15C9F3F422A321D1004576CF /* Item.swift */,
 				15C9F3F622A3266D004576CF /* Shop.swift */,
-				15348C4B22D1000600E61B5A /* ShopListColours.swift */,
 				15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */,
 			);
 			path = Models;
@@ -217,7 +345,10 @@
 			files = (
 				15C9F39F22A0639F004576CF /* LaunchScreen.storyboard in Resources */,
 				15C9F39C22A0639F004576CF /* Assets.xcassets in Resources */,
+				1577A003236521B000777EE3 /* running-sheep.gif in Resources */,
+				154380462345E97E00BA92DD /* ShopViewCell.xib in Resources */,
 				15C9F39A22A0639D004576CF /* Main.storyboard in Resources */,
+				1555CD60234F890E006BB706 /* AddShopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +367,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -245,6 +377,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,15 +414,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1555CD50234E0BBC006BB706 /* ShopItemModel.swift in Sources */,
+				1555CD5C234EF571006BB706 /* ShopListRouter.swift in Sources */,
+				1555CD5F234F890E006BB706 /* AddShopCell.swift in Sources */,
+				15779FFD236509AA00777EE3 /* ShopImages.swift in Sources */,
 				15C9F3F322A2EC70004576CF /* ShopListViewController.swift in Sources */,
 				15C9F3F522A321D1004576CF /* Item.swift in Sources */,
 				15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */,
 				15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */,
+				154380452345E97E00BA92DD /* ShopViewCell.swift in Sources */,
+				1555CD4E234E0B0D006BB706 /* ShopModel.swift in Sources */,
 				15348C4E22D1194F00E61B5A /* SwipeActionMak.swift in Sources */,
-				15348C4C22D1000600E61B5A /* ShopListColours.swift in Sources */,
 				15348C5322D1253C00E61B5A /* UIImage+Extensions.swift in Sources */,
+				1555CD54234E3A5D006BB706 /* ShopListInteractor.swift in Sources */,
+				15779FF923632F3700777EE3 /* UIView+Extensions.swift in Sources */,
 				15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */,
+				1543804823473E9F00BA92DD /* ShopsViewController.swift in Sources */,
+				1555CD4B234E0A5E006BB706 /* ShopListProtocols.swift in Sources */,
+				1555CD52234E3A1F006BB706 /* ShopListPresenter.swift in Sources */,
 				15C9F3F722A3266D004576CF /* Shop.swift in Sources */,
+				1577A0052365232000777EE3 /* LaunchViewController.swift in Sources */,
+				1555CD56234E3D55006BB706 /* ShopListLocalDataManager.swift in Sources */,
+				1577A0002365217400777EE3 /* SheepAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NFJ3DTH22X;
 				INFOPLIST_FILE = ShoppingList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NFJ3DTH22X;
 				INFOPLIST_FILE = ShoppingList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

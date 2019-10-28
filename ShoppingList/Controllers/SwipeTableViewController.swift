@@ -46,7 +46,7 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
                 self.updateModelColour(at: indexPath)
             }
             changeColourAction.image = UIImage(named: "colour")?.scaledWidth(to: 30.0)
-            changeColourAction.backgroundColor = UIColor.flatSkyBlue
+            changeColourAction.backgroundColor = UIColor.flatSkyBlue()
             actions.append(changeColourAction)
         }
         

@@ -1,52 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SqK-ei-W82">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c4d-er-ZhR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shops-->
-        <scene sceneID="ekk-DD-r5j">
-            <objects>
-                <tableViewController id="RxL-EJ-FgC" customClass="ShopListViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="44e-sP-dtj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="zzN-3Z-EHa" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zzN-3Z-EHa" id="F3D-0j-VCl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RxL-EJ-FgC" id="ZMn-li-LL9"/>
-                            <outlet property="delegate" destination="RxL-EJ-FgC" id="7Tm-SN-rgn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Shops" id="3wG-rd-MkY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Pm-pW-2Xa">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="addbuttonPressed:" destination="RxL-EJ-FgC" id="TgY-tA-f5y"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="LYO-p0-jWS" kind="show" identifier="goToItems" id="dhh-Oe-fRx"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0hK-6e-Stg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1551" y="138"/>
-        </scene>
         <!--Items-->
         <scene sceneID="v74-mr-4e8">
             <objects>
@@ -92,32 +53,103 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiA-xL-NIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="138"/>
+            <point key="canvasLocation" x="3166.666666666667" y="137.94642857142856"/>
+        </scene>
+        <!--Shops View Controller-->
+        <scene sceneID="hBo-gY-gaR">
+            <objects>
+                <viewController id="uPm-on-nF4" customClass="ShopsViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Nm-58-bEa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eqD-Em-Sfb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-pF-KPJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-vE-vwz">
+                                                <rect key="frame" x="158.5" y="40" width="97" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="U1D-vE-vwz" firstAttribute="centerY" secondItem="pV3-pF-KPJ" secondAttribute="centerY" id="Uu9-wf-FWE"/>
+                                            <constraint firstItem="U1D-vE-vwz" firstAttribute="centerX" secondItem="pV3-pF-KPJ" secondAttribute="centerX" id="eGv-Wd-0bS"/>
+                                            <constraint firstAttribute="height" constant="100" id="gDB-Gr-q8v"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="brJ-2F-gZx">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="674"/>
+                                        <color key="backgroundColor" red="0.89803921568627454" green="0.69019607843137254" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nxl-cT-7fe">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShopViewCell" id="dDd-Yw-dad">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="brJ-2F-gZx" secondAttribute="bottom" id="32D-5g-WPH"/>
+                                    <constraint firstAttribute="trailing" secondItem="brJ-2F-gZx" secondAttribute="trailing" id="DH9-lP-ho2"/>
+                                    <constraint firstItem="brJ-2F-gZx" firstAttribute="leading" secondItem="eqD-Em-Sfb" secondAttribute="leading" id="GDZ-Sz-wMd"/>
+                                    <constraint firstItem="pV3-pF-KPJ" firstAttribute="top" secondItem="eqD-Em-Sfb" secondAttribute="top" id="XYz-yp-E0V"/>
+                                    <constraint firstItem="brJ-2F-gZx" firstAttribute="top" secondItem="pV3-pF-KPJ" secondAttribute="bottom" id="h9B-MS-8zg"/>
+                                    <constraint firstAttribute="trailing" secondItem="pV3-pF-KPJ" secondAttribute="trailing" id="ogz-I5-tf8"/>
+                                    <constraint firstItem="pV3-pF-KPJ" firstAttribute="leading" secondItem="eqD-Em-Sfb" secondAttribute="leading" id="ut7-Am-CSj"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b9v-f4-fmk" firstAttribute="bottom" secondItem="eqD-Em-Sfb" secondAttribute="bottom" id="3Fg-Oa-Aem"/>
+                            <constraint firstItem="eqD-Em-Sfb" firstAttribute="top" secondItem="b9v-f4-fmk" secondAttribute="top" id="4R9-ER-pGa"/>
+                            <constraint firstItem="b9v-f4-fmk" firstAttribute="trailing" secondItem="eqD-Em-Sfb" secondAttribute="trailing" id="JZy-CB-cWs"/>
+                            <constraint firstItem="eqD-Em-Sfb" firstAttribute="leading" secondItem="b9v-f4-fmk" secondAttribute="leading" id="srv-N9-bNT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b9v-f4-fmk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K7I-dd-UNx"/>
+                    <connections>
+                        <outlet property="shopsCollectionView" destination="brJ-2F-gZx" id="83x-UI-j3M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BId-la-C2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2400" y="138"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="aBp-xf-aj4">
+        <scene sceneID="skp-UC-S5K">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SqK-ei-W82" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ShopsNavController" automaticallyAdjustsScrollViewInsets="NO" id="c4d-er-ZhR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7jp-Vo-ODc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S8L-4Y-kam">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="RxL-EJ-FgC" kind="relationship" relationship="rootViewController" id="fp3-1f-nBm"/>
+                        <segue destination="uPm-on-nF4" kind="relationship" relationship="rootViewController" id="xYL-F5-n6W"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a8S-eh-KcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPf-lN-u1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.73913043478262" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1582.608695652174" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

@@ -22,11 +22,14 @@ class ShoppingItemViewController: SwipeTableViewController {
         }
     }
     
+    var numberOfItems = 0 // Could be dangerous, consider making a query to re-evaluate each time and update is made
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.swipeActions = SwipeActionMask.delete
         tableView.separatorStyle = .none
         tableView.rowHeight = 80.0
+//        tableView.isEditing = true
         
     }
     
@@ -58,6 +61,40 @@ class ShoppingItemViewController: SwipeTableViewController {
         navigationController?.navigationBar.tintColor = FlatWhite()
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: FlatWhite()]
         
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        try! realm.write {
+            guard let sourceObject = items?[sourceIndexPath.row] else { return }
+            guard let destinationObject = items?[destinationIndexPath.row] else { return }
+            
+            let destinationObjectOrder = destinationObject.order
+            
+            if sourceIndexPath.row < destinationIndexPath.row {
+                for index in sourceIndexPath.row...destinationIndexPath.row {
+                    let object = items?[index]
+                    object?.order += 1
+                }
+            } else {
+                for index in (destinationIndexPath.row..<sourceIndexPath.row).reversed() {
+                    guard let object = items?[index] else { continue }
+                    object.order -= 1
+                }
+            }
+            sourceObject.order = destinationObjectOrder
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,8 +151,10 @@ class ShoppingItemViewController: SwipeTableViewController {
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
                         newItem.done = false
+                        newItem.order = self.numberOfItems
                         currentCategory.items.append(newItem)
                     }
+                    self.numberOfItems += 1
                 } catch {
                     print("Error saving categories context")
                     print(error)
@@ -140,22 +179,9 @@ class ShoppingItemViewController: SwipeTableViewController {
         
     }
     
-    func saveItems() {
-        do {
-            try realm.write {
-
-            }
-        } catch {
-            print("Error saving categories context")
-            print(error)
-        }
-        
-        tableView.reloadData()
-    }
-    
     func loadItems() {
-        
-        items = selectedShop?.items.sorted(byKeyPath: "title", ascending: true)
+        items = selectedShop?.items.sorted(byKeyPath: "title", ascending: true).sorted(byKeyPath: "order", ascending: false)
+        numberOfItems = items?.count ?? 0
     }
     
     override func deleteModel(at indexPath: IndexPath) {
@@ -164,6 +190,8 @@ class ShoppingItemViewController: SwipeTableViewController {
                 try self.realm.write {
                     self.realm.delete(itemForDeletion)
                 }
+                
+                self.numberOfItems -= 1
             } catch {
                 print("Error deleting categories context")
                 print(error)
@@ -182,7 +210,7 @@ extension ShoppingItemViewController: UISearchBarDelegate {
         // Get all items first
         loadItems()
         
-        items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+        items = items?.filter("title CONTAINS[cd] %@", searchBar.text!)//.sorted(byKeyPath: "dateCreated", ascending: true)
         
         tableView.reloadData()
         
@@ -196,7 +224,7 @@ extension ShoppingItemViewController: UISearchBarDelegate {
                 searchBar.resignFirstResponder()
             }
         } else {
-            items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+            items = items?.filter("title CONTAINS[cd] %@", searchBar.text!)//.sorted(byKeyPath: "dateCreated", ascending: true)
             tableView.reloadData()
         }
     }
