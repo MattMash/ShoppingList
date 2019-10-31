@@ -26,6 +26,15 @@
 		1577A0002365217400777EE3 /* SheepAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FFF2365217400777EE3 /* SheepAnimationView.swift */; };
 		1577A003236521B000777EE3 /* running-sheep.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1577A002236521B000777EE3 /* running-sheep.gif */; };
 		1577A0052365232000777EE3 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A0042365232000777EE3 /* LaunchViewController.swift */; };
+		1577A0072366BC9800777EE3 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A0062366BC9800777EE3 /* CollectionHeaderView.swift */; };
+		1577A00B2366E6D600777EE3 /* ShoppingItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A00A2366E6D600777EE3 /* ShoppingItemsRouter.swift */; };
+		1577A00E2366F37F00777EE3 /* ShoppingItemsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A00D2366F37F00777EE3 /* ShoppingItemsProtocols.swift */; };
+		1577A0112366F43600777EE3 /* ShoppingItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A0102366F43600777EE3 /* ShoppingItemsViewController.swift */; };
+		1577A014236708CB00777EE3 /* ShoppingItemsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A013236708CB00777EE3 /* ShoppingItemsDataManager.swift */; };
+		1577A01823672DDB00777EE3 /* ShoppingItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A01723672DDB00777EE3 /* ShoppingItemsInteractor.swift */; };
+		1577A022236A134000777EE3 /* ShoppingItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A021236A134000777EE3 /* ShoppingItemsPresenter.swift */; };
+		1577A026236AEA1800777EE3 /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A024236AEA1800777EE3 /* ShoppingItemTableViewCell.swift */; };
+		1577A027236AEA1800777EE3 /* ShoppingItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1577A025236AEA1800777EE3 /* ShoppingItemTableViewCell.xib */; };
 		15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C735C722A5961C00079237 /* SwipeTableViewController.swift */; };
 		15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39422A0639D004576CF /* AppDelegate.swift */; };
 		15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */; };
@@ -58,6 +67,15 @@
 		15779FFF2365217400777EE3 /* SheepAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheepAnimationView.swift; sourceTree = "<group>"; };
 		1577A002236521B000777EE3 /* running-sheep.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "running-sheep.gif"; sourceTree = "<group>"; };
 		1577A0042365232000777EE3 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		1577A0062366BC9800777EE3 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		1577A00A2366E6D600777EE3 /* ShoppingItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsRouter.swift; sourceTree = "<group>"; };
+		1577A00D2366F37F00777EE3 /* ShoppingItemsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsProtocols.swift; sourceTree = "<group>"; };
+		1577A0102366F43600777EE3 /* ShoppingItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsViewController.swift; sourceTree = "<group>"; };
+		1577A013236708CB00777EE3 /* ShoppingItemsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsDataManager.swift; sourceTree = "<group>"; };
+		1577A01723672DDB00777EE3 /* ShoppingItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsInteractor.swift; sourceTree = "<group>"; };
+		1577A021236A134000777EE3 /* ShoppingItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsPresenter.swift; sourceTree = "<group>"; };
+		1577A024236AEA1800777EE3 /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
+		1577A025236AEA1800777EE3 /* ShoppingItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingItemTableViewCell.xib; sourceTree = "<group>"; };
 		15C735C722A5961C00079237 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		15C9F39122A0639D004576CF /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C9F39422A0639D004576CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +137,7 @@
 				1543804723473E9F00BA92DD /* ShopsViewController.swift */,
 				1555CD5D234F890E006BB706 /* AddShopCell.swift */,
 				1555CD5E234F890E006BB706 /* AddShopCell.xib */,
+				1577A0062366BC9800777EE3 /* CollectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +209,69 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1577A0082366D05800777EE3 /* ShoppingItems */ = {
+			isa = PBXGroup;
+			children = (
+				1577A023236A134700777EE3 /* Presenter */,
+				1577A01623672DBB00777EE3 /* Interactor */,
+				1577A0122367089800777EE3 /* DataManager */,
+				1577A00F2366F3D800777EE3 /* View */,
+				1577A00C2366E6E100777EE3 /* Protocol */,
+				1577A0092366E6AA00777EE3 /* Router */,
+			);
+			path = ShoppingItems;
+			sourceTree = "<group>";
+		};
+		1577A0092366E6AA00777EE3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1577A00A2366E6D600777EE3 /* ShoppingItemsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1577A00C2366E6E100777EE3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1577A00D2366F37F00777EE3 /* ShoppingItemsProtocols.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1577A00F2366F3D800777EE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1577A0102366F43600777EE3 /* ShoppingItemsViewController.swift */,
+				1577A024236AEA1800777EE3 /* ShoppingItemTableViewCell.swift */,
+				1577A025236AEA1800777EE3 /* ShoppingItemTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1577A0122367089800777EE3 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1577A013236708CB00777EE3 /* ShoppingItemsDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		1577A01623672DBB00777EE3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1577A01723672DDB00777EE3 /* ShoppingItemsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1577A023236A134700777EE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1577A021236A134000777EE3 /* ShoppingItemsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		15C9F38822A0639D004576CF = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +293,7 @@
 		15C9F39322A0639D004576CF /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				1577A0082366D05800777EE3 /* ShoppingItems */,
 				1577A0012365219300777EE3 /* Resources */,
 				15779FFE2365213800777EE3 /* Launch */,
 				1555CD4C234E0AEF006BB706 /* Entities */,
@@ -348,6 +431,7 @@
 				1577A003236521B000777EE3 /* running-sheep.gif in Resources */,
 				154380462345E97E00BA92DD /* ShopViewCell.xib in Resources */,
 				15C9F39A22A0639D004576CF /* Main.storyboard in Resources */,
+				1577A027236AEA1800777EE3 /* ShoppingItemTableViewCell.xib in Resources */,
 				1555CD60234F890E006BB706 /* AddShopCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +502,9 @@
 				1555CD5C234EF571006BB706 /* ShopListRouter.swift in Sources */,
 				1555CD5F234F890E006BB706 /* AddShopCell.swift in Sources */,
 				15779FFD236509AA00777EE3 /* ShopImages.swift in Sources */,
+				1577A00E2366F37F00777EE3 /* ShoppingItemsProtocols.swift in Sources */,
+				1577A01823672DDB00777EE3 /* ShoppingItemsInteractor.swift in Sources */,
+				1577A022236A134000777EE3 /* ShoppingItemsPresenter.swift in Sources */,
 				15C9F3F322A2EC70004576CF /* ShopListViewController.swift in Sources */,
 				15C9F3F522A321D1004576CF /* Item.swift in Sources */,
 				15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */,
@@ -426,16 +513,21 @@
 				1555CD4E234E0B0D006BB706 /* ShopModel.swift in Sources */,
 				15348C4E22D1194F00E61B5A /* SwipeActionMak.swift in Sources */,
 				15348C5322D1253C00E61B5A /* UIImage+Extensions.swift in Sources */,
+				1577A0112366F43600777EE3 /* ShoppingItemsViewController.swift in Sources */,
 				1555CD54234E3A5D006BB706 /* ShopListInteractor.swift in Sources */,
 				15779FF923632F3700777EE3 /* UIView+Extensions.swift in Sources */,
 				15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */,
+				1577A00B2366E6D600777EE3 /* ShoppingItemsRouter.swift in Sources */,
 				1543804823473E9F00BA92DD /* ShopsViewController.swift in Sources */,
 				1555CD4B234E0A5E006BB706 /* ShopListProtocols.swift in Sources */,
 				1555CD52234E3A1F006BB706 /* ShopListPresenter.swift in Sources */,
 				15C9F3F722A3266D004576CF /* Shop.swift in Sources */,
 				1577A0052365232000777EE3 /* LaunchViewController.swift in Sources */,
 				1555CD56234E3D55006BB706 /* ShopListLocalDataManager.swift in Sources */,
+				1577A026236AEA1800777EE3 /* ShoppingItemTableViewCell.swift in Sources */,
+				1577A0072366BC9800777EE3 /* CollectionHeaderView.swift in Sources */,
 				1577A0002365217400777EE3 /* SheepAnimationView.swift in Sources */,
+				1577A014236708CB00777EE3 /* ShoppingItemsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

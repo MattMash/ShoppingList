@@ -11,7 +11,7 @@
         <!--Items-->
         <scene sceneID="v74-mr-4e8">
             <objects>
-                <tableViewController id="LYO-p0-jWS" customClass="ShoppingItemViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LYO-p0-jWS" customClass="ShoppingItemsViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8NB-a3-sPn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,12 +26,21 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QOX-Ca-D7X" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="fFa-E4-beo" style="IBUITableViewCellStyleDefault" id="QOX-Ca-D7X" customClass="ShoppingItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QOX-Ca-D7X" id="yDz-EG-gxR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fFa-E4-beo">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -69,18 +78,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-pF-KPJ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-vE-vwz">
-                                                <rect key="frame" x="158.5" y="40" width="97" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-vE-vwz">
+                                                <rect key="frame" x="145" y="8" width="124" height="37"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="27"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-mf-2hw">
+                                                <rect key="frame" x="188.5" y="40" width="37" height="44"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="32"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.69019607839999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="U1D-vE-vwz" firstAttribute="centerY" secondItem="pV3-pF-KPJ" secondAttribute="centerY" id="Uu9-wf-FWE"/>
-                                            <constraint firstItem="U1D-vE-vwz" firstAttribute="centerX" secondItem="pV3-pF-KPJ" secondAttribute="centerX" id="eGv-Wd-0bS"/>
+                                            <constraint firstItem="7FG-mf-2hw" firstAttribute="top" secondItem="pV3-pF-KPJ" secondAttribute="top" constant="40" id="3m3-tx-3Vt"/>
+                                            <constraint firstItem="7FG-mf-2hw" firstAttribute="centerX" secondItem="pV3-pF-KPJ" secondAttribute="centerX" id="IU3-PA-9Rw"/>
+                                            <constraint firstAttribute="bottom" secondItem="7FG-mf-2hw" secondAttribute="bottom" constant="16" id="bch-FB-Qk8"/>
+                                            <constraint firstItem="U1D-vE-vwz" firstAttribute="top" secondItem="pV3-pF-KPJ" secondAttribute="top" constant="8" id="bwd-5a-7yr"/>
+                                            <constraint firstItem="U1D-vE-vwz" firstAttribute="centerX" secondItem="pV3-pF-KPJ" secondAttribute="centerX" id="db3-bS-G5G"/>
                                             <constraint firstAttribute="height" constant="100" id="gDB-Gr-q8v"/>
+                                            <constraint firstAttribute="bottom" secondItem="U1D-vE-vwz" secondAttribute="bottom" constant="55" id="tK5-PG-zuX"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="brJ-2F-gZx">
@@ -88,13 +107,13 @@
                                         <color key="backgroundColor" red="0.89803921568627454" green="0.69019607843137254" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nxl-cT-7fe">
                                             <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="headerReferenceSize" width="50" height="50"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShopViewCell" id="dDd-Yw-dad">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -102,6 +121,26 @@
                                                 </view>
                                             </collectionViewCell>
                                         </cells>
+                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CollectionHeaderView" id="brd-WY-rOZ" userLabel="Section Header View" customClass="CollectionHeaderView" customModule="ShoppingList" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C4-La-8Gl">
+                                                    <rect key="frame" x="10" y="8.5" width="165.5" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.8980392157" green="0.69019607839999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="4C4-La-8Gl" firstAttribute="leading" secondItem="brd-WY-rOZ" secondAttribute="leading" constant="10" id="0uX-MJ-0Tf"/>
+                                                <constraint firstItem="4C4-La-8Gl" firstAttribute="centerY" secondItem="brd-WY-rOZ" secondAttribute="centerY" id="zVm-de-QYE"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="sectionHeaderLabel" destination="4C4-La-8Gl" id="Lew-yp-SPV"/>
+                                            </connections>
+                                        </collectionReusableView>
                                     </collectionView>
                                 </subviews>
                                 <constraints>
@@ -115,7 +154,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.69019607839999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="b9v-f4-fmk" firstAttribute="bottom" secondItem="eqD-Em-Sfb" secondAttribute="bottom" id="3Fg-Oa-Aem"/>
                             <constraint firstItem="eqD-Em-Sfb" firstAttribute="top" secondItem="b9v-f4-fmk" secondAttribute="top" id="4R9-ER-pGa"/>
@@ -131,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BId-la-C2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2400" y="138"/>
+            <point key="canvasLocation" x="2398.5507246376815" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="skp-UC-S5K">
@@ -141,6 +180,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S8L-4Y-kam">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.57254901960000004" green="0.35686274509999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.57254901960000004" green="0.35686274509999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

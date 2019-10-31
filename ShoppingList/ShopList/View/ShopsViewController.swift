@@ -17,11 +17,11 @@ class ShopsViewController: UIViewController, ShopListViewProtocol {
     private let itemsPerRow: CGFloat = 2
     private var widthPerItem:  CGFloat = 0
     
-    var shopList: [ShopModel] = []
+    private var shopList: [ShopModel] = []
     
-    private let sectionInsets = UIEdgeInsets(top: 40.0,
+    private let sectionInsets = UIEdgeInsets(top: 20.0,
                                              left: 10.0,
-                                             bottom: 40.0,
+                                             bottom: 20.0,
                                              right: 10.0)
     
     override func viewDidLoad() {
@@ -78,6 +78,8 @@ extension ShopsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (indexPath.row == shopList.count) {
             addShopTapped()
+        } else {
+            shopTapped(shop: shopList[indexPath.row])
         }
     }
     
@@ -103,6 +105,10 @@ extension ShopsViewController: UICollectionViewDelegate {
         }
         present(alert, animated: true, completion: nil)
     }
+    
+    func shopTapped(shop: ShopModel) {
+        presenter?.showShopItems(for: shop)
+    }
 }
 
 // MARK: - Collection View Data Source
@@ -121,6 +127,24 @@ extension ShopsViewController: UICollectionViewDataSource {
         cell.configureCell(shop: shopList[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard
+                let headerView = collectionView.dequeueReusableSupplementaryView(
+                  ofKind: kind,
+                  withReuseIdentifier: "\(CollectionHeaderView.self)",
+                  for: indexPath) as? CollectionHeaderView
+                else {
+                  fatalError("Invalid view type")
+              }
+            headerView.sectionHeaderLabel.text = "Shopping"
+              return headerView
+            default:
+              assert(false, "Invalid element type")
+        }
     }
 }
 

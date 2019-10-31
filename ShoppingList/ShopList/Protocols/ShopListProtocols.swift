@@ -36,7 +36,7 @@ protocol ShopListPresenterProtocol: class {
     
     func deleteShop(_ shop: ShopModel)
     
-    func updateShop(from oldShop: ShopModel, to newShop: ShopModel)
+    func updateShop(from oldShopName: String, to newShop: ShopModel)
     
     func showShopItems(for shop: ShopModel)
     
@@ -49,17 +49,17 @@ protocol ShopListInteractorInputProtocol: class {
     // Presenter -> Interactor
     func getShops()
     
-    func addShop(_ shop: ShopModel)
+    func addShop(_ shop: Shop)
     
-    func deleteShop(_ shop: ShopModel)
+    func deleteShop(_ shop: Shop)
     
-    func updateShop(from oldShop: ShopModel, to newShop: ShopModel)
+    func updateShop(from oldShopName: String, to newShop: Shop)
 }
 
 protocol ShopListInteractorOutputProtocol: class {
     
     // Interactor -> Pressenter
-    func didGetShops(_ shops: [ShopModel])
+    func didGetShops(_ shops: [Shop])
     
     func onError(message: String)
 }
@@ -76,6 +76,8 @@ protocol ShopListDataManagerInputProtocol: class {
     
     func getShops()
     
+    func getShopSync(shopName: String) -> Shop?
+    
     func addShop(_ shop: Shop)
 
     func deleteShop(_ shop: Shop)
@@ -89,5 +91,5 @@ protocol ShopListDataManagerOutputProtocol {
     
     func onSuccessfulUpdate()
     
-    func onError(message: String)
+    func onError(_ message: String)
 }

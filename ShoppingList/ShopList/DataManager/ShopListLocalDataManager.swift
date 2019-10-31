@@ -20,7 +20,7 @@ class ShopListLocalDataManager: ShopListDataManagerInputProtocol {
             }
         } catch {
             print(error)
-            interactor?.onError(message: "Error deleting shop context")
+            interactor?.onError("Error deleting shop context")
         }
     }
     
@@ -33,7 +33,7 @@ class ShopListLocalDataManager: ShopListDataManagerInputProtocol {
             interactor?.onSuccessfulUpdate()
         }  catch {
             print(error)
-            interactor?.onError(message: "Error updating shop context")
+            interactor?.onError("Error updating shop context")
         }
     }
     
@@ -41,6 +41,11 @@ class ShopListLocalDataManager: ShopListDataManagerInputProtocol {
         let shops = realm.objects(Shop.self)
         let shops2: [Shop] = shops.map{$0}
         interactor?.didGetShops(shops2)
+    }
+    
+    
+    func getShopSync(shopName: String) -> Shop? {
+        return realm.objects(Shop.self).filter("name == %@", shopName).first
     }
     
     func addShop(_ shop: Shop) {
@@ -52,7 +57,7 @@ class ShopListLocalDataManager: ShopListDataManagerInputProtocol {
         } catch {
             print("Error saving shops context")
             print(error)
-            interactor?.onError(message: "Error saving shops context")
+            interactor?.onError("Error saving shops context")
         }
     }
 }

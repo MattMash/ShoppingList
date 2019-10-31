@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ShopListPresenter: ShopListPresenterProtocol {
     var view: ShopListViewProtocol?
@@ -18,7 +19,7 @@ class ShopListPresenter: ShopListPresenterProtocol {
     }
     
     func addShop(_ shop: ShopModel) {
-        interactor?.addShop(shop)
+        interactor?.addShop(mapModel(shop))
     }
     
     func showShopItems(for shop: ShopModel) {
@@ -27,17 +28,38 @@ class ShopListPresenter: ShopListPresenterProtocol {
     }
     
     func deleteShop(_ shop: ShopModel) {
-        interactor?.deleteShop(shop)
+        interactor?.deleteShop(mapModel(shop))
     }
     
-    func updateShop(from oldShop: ShopModel, to newShop: ShopModel) {
-        interactor?.updateShop(from: oldShop, to: newShop)
+    func updateShop(from oldShopName: String, to newShop: ShopModel) {
+        interactor?.updateShop(from: oldShopName, to: mapModel(newShop))
+    }
+    
+    private func mapShop(_ shop: Shop) -> ShopModel {
+        let shopModel = ShopModel()
+        shopModel.name = shop.name
+        shopModel.image = getShopImage(shop.name) ?? UIImage(named: "shopping-cart")
+        return shopModel
+    }
+    
+    private func mapModel(_ model: ShopModel) -> Shop {
+        let shop = Shop()
+        shop.name = model.name
+        return shop
+    }
+    
+    private func getShopImage(_ shopName: String) -> UIImage? {
+        guard let assetName = mapShopNamesToAssetName[shopName.lowercased()] else { return nil }
+        return UIImage(named: assetName)
     }
 }
 
 extension ShopListPresenter: ShopListInteractorOutputProtocol {
-    func didGetShops(_ shops: [ShopModel]) {
-        view?.showShops(shops)
+    func didGetShops(_ shops: [Shop]) {
+        let shopModels = shops.map { shop -> ShopModel in
+            return mapShop(shop)
+        }
+        view?.showShops(shopModels)
     }
     
     func onError(message: String) {

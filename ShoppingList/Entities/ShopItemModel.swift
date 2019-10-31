@@ -8,10 +8,9 @@
 
 import Foundation
 
-struct ShopItemModel {
+class ShopItemModel {
     var title: String = ""
     var done: Bool = false
     var dateCreated: Date?
     var order = 0
-    var shop: ShopModel
 }
