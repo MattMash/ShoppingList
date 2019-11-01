@@ -11,7 +11,7 @@ import UIKit
 
 class ShoppingItemsRouter: ShoppingItemsRouterProtocol {
     static func createShoppingItemsModule(for shop: ShopModel) -> UIViewController {
-        let shoppingItemsVC = ShoppingItemsViewController()
+        let shoppingItemsVC = mainStoryboard.instantiateViewController(withIdentifier: "ShoppingItemsController") as! ShoppingItemsViewProtocol
         
         let presenter = ShoppingItemsPresenter()
         let interactor = ShoppingItemsInteractor()
@@ -28,6 +28,10 @@ class ShoppingItemsRouter: ShoppingItemsRouterProtocol {
         itemDataSource.interactor = interactor
         shoppingItemsVC.selectedShop = shop
         
-        return shoppingItemsVC
+        return shoppingItemsVC as! UIViewController
+    }
+    
+    static var mainStoryboard: UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 }

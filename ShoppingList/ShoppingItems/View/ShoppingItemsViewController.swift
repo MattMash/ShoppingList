@@ -8,27 +8,31 @@
 
 import UIKit
 
-class ShoppingItemsViewController: UITableViewController, ShoppingItemsViewProtocol {
+class ShoppingItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShoppingItemsViewProtocol {
     var presenter: ShoppingItemsPresenterProtocol?
-    
     private var items: [ShopItemModel]?
+    @IBOutlet weak var itemsTableView: UITableView!
     
-    var selectedShop: ShopModel? {
-            didSet {
-                // interactor must have selected shop set as well
-                presenter?.loadItems()
-            }
-        }
+    var selectedShop: ShopModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(ShoppingItemTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        itemsTableView.delegate = self
+        itemsTableView.dataSource = self
+        itemsTableView.separatorStyle = .none
+        itemsTableView.rowHeight = 80.0
+        itemsTableView.backgroundColor = UIColor(hexString: "E5B0EA")
+        itemsTableView.register(UINib(nibName: "ShoppingItemTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        // interactor must have selected shop set as well
+        presenter?.loadItems()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         title = selectedShop!.name
-
     }
     
     @objc
@@ -62,7 +66,7 @@ class ShoppingItemsViewController: UITableViewController, ShoppingItemsViewProto
     
     func showItems(_ items: [ShopItemModel]) {
         self.items = items
-        tableView.reloadData()
+        itemsTableView.reloadData()
     }
     
     func showLoading() {
@@ -75,15 +79,15 @@ class ShoppingItemsViewController: UITableViewController, ShoppingItemsViewProto
     
     // MARK: - Table View Data Source
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items?.count ?? 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ShoppingItemTableViewCell
+        cell.backgroundColor = UIColor(hexString: "E5B0EA")
         if let item = items?[indexPath.row] {
-            cell.textLabel?.text = item.title
-            cell.accessoryType = item.done ? .checkmark : .none
+            cell.configureFor(item: item)
         } else {
             cell.textLabel?.text = "No Items Added"
         }

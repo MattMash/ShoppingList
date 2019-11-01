@@ -35,6 +35,7 @@
 		1577A022236A134000777EE3 /* ShoppingItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A021236A134000777EE3 /* ShoppingItemsPresenter.swift */; };
 		1577A026236AEA1800777EE3 /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A024236AEA1800777EE3 /* ShoppingItemTableViewCell.swift */; };
 		1577A027236AEA1800777EE3 /* ShoppingItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1577A025236AEA1800777EE3 /* ShoppingItemTableViewCell.xib */; };
+		1577A02A236B4F7800777EE3 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A029236B4F7800777EE3 /* Checkbox.swift */; };
 		15C735C822A5961C00079237 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C735C722A5961C00079237 /* SwipeTableViewController.swift */; };
 		15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39422A0639D004576CF /* AppDelegate.swift */; };
 		15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9F39622A0639D004576CF /* ShoppingItemViewController.swift */; };
@@ -76,6 +77,7 @@
 		1577A021236A134000777EE3 /* ShoppingItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsPresenter.swift; sourceTree = "<group>"; };
 		1577A024236AEA1800777EE3 /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
 		1577A025236AEA1800777EE3 /* ShoppingItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingItemTableViewCell.xib; sourceTree = "<group>"; };
+		1577A029236B4F7800777EE3 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		15C735C722A5961C00079237 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		15C9F39122A0639D004576CF /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C9F39422A0639D004576CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1577A028236B4F5B00777EE3 /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				1577A029236B4F7800777EE3 /* Checkbox.swift */,
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
 		15C9F38822A0639D004576CF = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		15C9F3CC22A27CBC004576CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1577A028236B4F5B00777EE3 /* Checkbox */,
 				15C9F39822A0639D004576CF /* Main.storyboard */,
 			);
 			path = Views;
@@ -506,6 +517,7 @@
 				1577A01823672DDB00777EE3 /* ShoppingItemsInteractor.swift in Sources */,
 				1577A022236A134000777EE3 /* ShoppingItemsPresenter.swift in Sources */,
 				15C9F3F322A2EC70004576CF /* ShopListViewController.swift in Sources */,
+				1577A02A236B4F7800777EE3 /* Checkbox.swift in Sources */,
 				15C9F3F522A321D1004576CF /* Item.swift in Sources */,
 				15C9F39722A0639D004576CF /* ShoppingItemViewController.swift in Sources */,
 				15C9F39522A0639D004576CF /* AppDelegate.swift in Sources */,
