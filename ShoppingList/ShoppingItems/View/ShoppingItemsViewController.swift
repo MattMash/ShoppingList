@@ -15,24 +15,39 @@ class ShoppingItemsViewController: UIViewController, UITableViewDelegate, UITabl
     
     var selectedShop: ShopModel?
     
+    @IBOutlet weak var shopCardView: UIView!
+    @IBOutlet weak var shopImageView: UIImageView!
+    @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var totalCostLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemsTableView.delegate = self
-        itemsTableView.dataSource = self
-        itemsTableView.separatorStyle = .none
-        itemsTableView.rowHeight = 80.0
-        itemsTableView.backgroundColor = UIColor(hexString: "E5B0EA")
-        itemsTableView.register(UINib(nibName: "ShoppingItemTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        setupTableView()
+        shopNameLabel.text = selectedShop?.name
+        
+        shopImageView.image = selectedShop?.image?.scaledWidth(to: 80.0)
+        shopImageView.layer.cornerRadius = 20.0
         
         // interactor must have selected shop set as well
         presenter?.loadItems()
 
+
+    }
+    
+    fileprivate func setupTableView() {
+        itemsTableView.delegate = self
+        itemsTableView.dataSource = self
+        itemsTableView.separatorStyle = .none
+        itemsTableView.rowHeight = 120.0
+        itemsTableView.backgroundColor = UIColor(hexString: "E5B0EA")
+        itemsTableView.register(UINib(nibName: "ShoppingItemTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-        title = selectedShop!.name
     }
     
     @objc
