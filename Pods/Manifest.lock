@@ -2,25 +2,25 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - lottie-ios (3.1.5)
   - Realm (3.20.0):
     - Realm/Headers (= 3.20.0)
   - Realm/Headers (3.20.0)
   - RealmSwift (3.20.0):
     - Realm (= 3.20.0)
-  - SwiftyGif (5.2.0)
   - SwipeCellKit (2.5.4)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/wowansm/Chameleon.git`, branch `swift5`)
+  - lottie-ios (= 3.1.5)
   - RealmSwift
-  - SwiftyGif
   - SwipeCellKit (= 2.5.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - lottie-ios
     - Realm
     - RealmSwift
-    - SwiftyGif
     - SwipeCellKit
 
 EXTERNAL SOURCES:
@@ -35,11 +35,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
-  SwiftyGif: b85c6b33a9411859d9e1db998b6a8214aea942df
   SwipeCellKit: 4eada3884ab1bbae5e8d2fb9030c242aa23d7f42
 
-PODFILE CHECKSUM: 3af1f3295f82096558d3e55dc3f5bdc2ce879151
+PODFILE CHECKSUM: 9f612d4a290a7a8eb221b8306897d85e7496ce67
 
 COCOAPODS: 1.5.3

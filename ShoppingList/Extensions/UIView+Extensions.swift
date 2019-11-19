@@ -11,7 +11,7 @@ import UIKit
 
 
 extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
@@ -31,10 +31,26 @@ extension UIView {
         }
         return [left, right, top, bottom]
     }
+    
+    func setIsHidden(_ hidden: Bool, animated: Bool) {
+        if animated {
+            if self.isHidden && !hidden {
+                self.alpha = 0.0
+                self.isHidden = false
+            }
+            UIView.animate(withDuration: 0.6, animations: {
+                self.alpha = hidden ? 0.0 : 1.0
+            }) { (complete) in
+                self.isHidden = hidden
+            }
+        } else {
+            self.isHidden = hidden
+        }
+    }
 }
 
 extension NSLayoutConstraint {
-
+    
     // same attribute, relation = .Equal, multiplier = 1, constant = 0
     convenience init(item view1: AnyObject, attribute attr: NSLayoutConstraint.Attribute, relatedBy relation: NSLayoutConstraint.Relation = .equal, toItem view2: AnyObject?, multiplier: CGFloat = 1, constant c: CGFloat = 0) {
         self.init(item: view1, attribute: attr, relatedBy: relation, toItem: view2, attribute: attr, multiplier: multiplier, constant: c)

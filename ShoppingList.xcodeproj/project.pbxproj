@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152EA31F2384086F00D43551 /* testing.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA31E2384086F00D43551 /* testing.json */; };
+		152EA32123840E2A00D43551 /* editOn.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA32023840E2A00D43551 /* editOn.json */; };
 		15348C4E22D1194F00E61B5A /* SwipeActionMak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */; };
 		15348C5322D1253C00E61B5A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */; };
 		154380452345E97E00BA92DD /* ShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154380432345E97E00BA92DD /* ShopViewCell.swift */; };
@@ -23,9 +25,6 @@
 		1555CD60234F890E006BB706 /* AddShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1555CD5E234F890E006BB706 /* AddShopCell.xib */; };
 		15779FF923632F3700777EE3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FF823632F3700777EE3 /* UIView+Extensions.swift */; };
 		15779FFD236509AA00777EE3 /* ShopImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FFC236509AA00777EE3 /* ShopImages.swift */; };
-		1577A0002365217400777EE3 /* SheepAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779FFF2365217400777EE3 /* SheepAnimationView.swift */; };
-		1577A003236521B000777EE3 /* running-sheep.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1577A002236521B000777EE3 /* running-sheep.gif */; };
-		1577A0052365232000777EE3 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A0042365232000777EE3 /* LaunchViewController.swift */; };
 		1577A0072366BC9800777EE3 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A0062366BC9800777EE3 /* CollectionHeaderView.swift */; };
 		1577A00B2366E6D600777EE3 /* ShoppingItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A00A2366E6D600777EE3 /* ShoppingItemsRouter.swift */; };
 		1577A00E2366F37F00777EE3 /* ShoppingItemsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1577A00D2366F37F00777EE3 /* ShoppingItemsProtocols.swift */; };
@@ -49,6 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		152EA31D2383FB0F00D43551 /* editButton.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = editButton.json; path = ShoppingList/Resources/editButton.json; sourceTree = SOURCE_ROOT; };
+		152EA31E2384086F00D43551 /* testing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testing.json; path = ShoppingList/Resources/testing.json; sourceTree = SOURCE_ROOT; };
+		152EA32023840E2A00D43551 /* editOn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = editOn.json; path = ShoppingList/Resources/editOn.json; sourceTree = SOURCE_ROOT; };
 		15348C4D22D1194F00E61B5A /* SwipeActionMak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionMak.swift; sourceTree = "<group>"; };
 		15348C5222D1253C00E61B5A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		154380432345E97E00BA92DD /* ShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewCell.swift; sourceTree = "<group>"; };
@@ -65,9 +67,6 @@
 		1555CD5E234F890E006BB706 /* AddShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddShopCell.xib; sourceTree = "<group>"; };
 		15779FF823632F3700777EE3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		15779FFC236509AA00777EE3 /* ShopImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopImages.swift; sourceTree = "<group>"; };
-		15779FFF2365217400777EE3 /* SheepAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheepAnimationView.swift; sourceTree = "<group>"; };
-		1577A002236521B000777EE3 /* running-sheep.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "running-sheep.gif"; sourceTree = "<group>"; };
-		1577A0042365232000777EE3 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		1577A0062366BC9800777EE3 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		1577A00A2366E6D600777EE3 /* ShoppingItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsRouter.swift; sourceTree = "<group>"; };
 		1577A00D2366F37F00777EE3 /* ShoppingItemsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsProtocols.swift; sourceTree = "<group>"; };
@@ -197,8 +196,6 @@
 		15779FFE2365213800777EE3 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				15779FFF2365217400777EE3 /* SheepAnimationView.swift */,
-				1577A0042365232000777EE3 /* LaunchViewController.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -206,7 +203,9 @@
 		1577A0012365219300777EE3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1577A002236521B000777EE3 /* running-sheep.gif */,
+				152EA32023840E2A00D43551 /* editOn.json */,
+				152EA31E2384086F00D43551 /* testing.json */,
+				152EA31D2383FB0F00D43551 /* editButton.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -439,7 +438,8 @@
 			files = (
 				15C9F39F22A0639F004576CF /* LaunchScreen.storyboard in Resources */,
 				15C9F39C22A0639F004576CF /* Assets.xcassets in Resources */,
-				1577A003236521B000777EE3 /* running-sheep.gif in Resources */,
+				152EA32123840E2A00D43551 /* editOn.json in Resources */,
+				152EA31F2384086F00D43551 /* testing.json in Resources */,
 				154380462345E97E00BA92DD /* ShopViewCell.xib in Resources */,
 				15C9F39A22A0639D004576CF /* Main.storyboard in Resources */,
 				1577A027236AEA1800777EE3 /* ShoppingItemTableViewCell.xib in Resources */,
@@ -462,8 +462,8 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -472,8 +472,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,11 +534,9 @@
 				1555CD4B234E0A5E006BB706 /* ShopListProtocols.swift in Sources */,
 				1555CD52234E3A1F006BB706 /* ShopListPresenter.swift in Sources */,
 				15C9F3F722A3266D004576CF /* Shop.swift in Sources */,
-				1577A0052365232000777EE3 /* LaunchViewController.swift in Sources */,
 				1555CD56234E3D55006BB706 /* ShopListLocalDataManager.swift in Sources */,
 				1577A026236AEA1800777EE3 /* ShoppingItemTableViewCell.swift in Sources */,
 				1577A0072366BC9800777EE3 /* CollectionHeaderView.swift in Sources */,
-				1577A0002365217400777EE3 /* SheepAnimationView.swift in Sources */,
 				1577A014236708CB00777EE3 /* ShoppingItemsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
