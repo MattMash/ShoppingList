@@ -97,6 +97,13 @@
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYV-eX-beD" userLabel="Delete View">
+                                <rect key="frame" x="304" y="0.0" width="0.0" height="92"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="YzL-q0-EcQ"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZq-cq-Mul" userLabel="Separator">
                                 <rect key="frame" x="80" y="0.0" width="1" height="92"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,16 +116,19 @@
                         <constraints>
                             <constraint firstItem="NZq-cq-Mul" firstAttribute="leading" secondItem="3Hw-jk-psM" secondAttribute="trailing" constant="20" id="Cqa-dG-Qi6"/>
                             <constraint firstItem="upq-mO-6QZ" firstAttribute="leading" secondItem="3Hw-jk-psM" secondAttribute="trailing" constant="21" id="Gdy-jY-Zj1"/>
+                            <constraint firstItem="yYV-eX-beD" firstAttribute="height" secondItem="43d-FC-YZR" secondAttribute="height" id="JR3-JT-EFT"/>
                             <constraint firstItem="UXl-YV-2zG" firstAttribute="centerY" secondItem="43d-FC-YZR" secondAttribute="centerY" id="MoO-EZ-74m"/>
                             <constraint firstItem="3Hw-jk-psM" firstAttribute="centerY" secondItem="43d-FC-YZR" secondAttribute="centerY" id="USR-w4-xic"/>
-                            <constraint firstAttribute="trailing" secondItem="qB5-U1-tDb" secondAttribute="trailing" constant="16" id="Wct-8L-BMO"/>
+                            <constraint firstItem="yYV-eX-beD" firstAttribute="leading" secondItem="qB5-U1-tDb" secondAttribute="trailing" constant="16" id="Wct-8L-BMO"/>
                             <constraint firstItem="3Hw-jk-psM" firstAttribute="leading" secondItem="43d-FC-YZR" secondAttribute="leading" constant="20" id="Y5m-mR-Lcs"/>
                             <constraint firstItem="upq-mO-6QZ" firstAttribute="top" secondItem="43d-FC-YZR" secondAttribute="top" id="asg-Rs-cQd"/>
                             <constraint firstAttribute="trailing" secondItem="upq-mO-6QZ" secondAttribute="trailing" id="aw0-WY-cok"/>
                             <constraint firstItem="NZq-cq-Mul" firstAttribute="top" secondItem="43d-FC-YZR" secondAttribute="top" id="j1y-Pl-SvW"/>
+                            <constraint firstItem="yYV-eX-beD" firstAttribute="centerY" secondItem="43d-FC-YZR" secondAttribute="centerY" id="jSy-gq-gVf"/>
                             <constraint firstAttribute="bottom" secondItem="upq-mO-6QZ" secondAttribute="bottom" id="lk2-ZS-zfp"/>
                             <constraint firstItem="UXl-YV-2zG" firstAttribute="leading" secondItem="NZq-cq-Mul" secondAttribute="trailing" constant="16" id="nVi-79-U9k"/>
                             <constraint firstAttribute="bottom" secondItem="qB5-U1-tDb" secondAttribute="bottom" constant="12" id="tWD-zA-yJu"/>
+                            <constraint firstAttribute="trailing" secondItem="yYV-eX-beD" secondAttribute="trailing" id="tZe-F8-syj"/>
                             <constraint firstAttribute="bottom" secondItem="NZq-cq-Mul" secondAttribute="bottom" id="vhZ-ji-ho1"/>
                         </constraints>
                     </view>
@@ -134,6 +144,8 @@
             <connections>
                 <outlet property="cardView" destination="43d-FC-YZR" id="vRS-ft-gjj"/>
                 <outlet property="checkbox" destination="3Hw-jk-psM" id="WfC-83-RZ8"/>
+                <outlet property="deleteView" destination="yYV-eX-beD" id="1q7-fo-d06"/>
+                <outlet property="deleteViewWidthConstraint" destination="YzL-q0-EcQ" id="EtP-5H-hzT"/>
                 <outlet property="editView" destination="upq-mO-6QZ" id="EQI-ED-hkt"/>
                 <outlet property="itemTitle" destination="UXl-YV-2zG" id="DkP-Gu-SUg"/>
                 <outlet property="itemTitleCenterYConstraint" destination="MoO-EZ-74m" id="2tD-OW-dVe"/>

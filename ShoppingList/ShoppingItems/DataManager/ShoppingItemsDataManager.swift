@@ -23,6 +23,7 @@ class ShoppingItemsDataManager: ShoppingItemsDataManagerInputProtocol {
             try self.realm.write {
                 self.realm.delete(item)
             }
+            interactor?.onSuccessfulUpdate()
         } catch {
             print(error)
             interactor?.onError("Error deleting shopping item context")

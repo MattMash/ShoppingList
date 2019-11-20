@@ -30,13 +30,13 @@ class ShoppingItemsInteractor: ShoppingItemsInteractorInputProtocol {
     }
     
     func deleteItem(_ itemName: String) {
-        if let itemToDelete = selectedShop?.items.filter("title == \(itemName)").first {
+        if let itemToDelete = selectedShop?.items.filter("title == %@", itemName).first {
             itemDataManager?.deleteItem(itemToDelete)
         }
     }
     
     func updateItem(itemName: String, to newItem: Item) {
-         if let itemToUpdate = selectedShop?.items.filter("title == \(itemName)").first {
+         if let itemToUpdate = selectedShop?.items.filter("title == %@", itemName).first {
             itemDataManager?.updateItem(from: itemToUpdate, to: newItem)
         }
     }

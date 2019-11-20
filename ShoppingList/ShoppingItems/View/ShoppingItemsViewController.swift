@@ -90,9 +90,14 @@ class ShoppingItemsViewController: UIViewController, ShoppingItemsViewProtocol, 
     }
     
     // MARK: - ShoppingItemCellDelegate
-    func updateItem(item: ShopItemModel, for row: Int) {
-        guard let oldItem =  items?[row] else { return }
+    func updateItem(item: ShopItemModel?, for row: Int?) {
+        guard let row = row, let item = item, let oldItem = items?[row] else { self.showError("Failed to update item"); return }
         presenter?.updateItem(from: oldItem, to: item)
+    }
+    
+    func deleteItem(row: Int?) {
+        guard let row = row, let deleteItem = items?[row] else { self.showError("Failed to delete item"); return }
+        presenter?.deleteItem(deleteItem)
     }
     
 }
@@ -117,7 +122,7 @@ extension ShoppingItemsViewController: UITableViewDataSource {
     }
 }
     
-    // MARK: - TableView Delegate
+// MARK: - TableView Delegate
 extension ShoppingItemsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
