@@ -36,7 +36,7 @@ class ShoppingItemsInteractor: ShoppingItemsInteractorInputProtocol {
     }
     
     func updateItem(itemName: String, to newItem: Item) {
-         if let itemToUpdate = selectedShop?.items.filter("title == %@", itemName).first {
+        if let itemToUpdate = selectedShop?.items.filter("title == %@", itemName).first {
             itemDataManager?.updateItem(from: itemToUpdate, to: newItem)
         }
     }
@@ -49,17 +49,45 @@ class ShoppingItemsInteractor: ShoppingItemsInteractorInputProtocol {
 }
 
 extension ShoppingItemsInteractor: ShoppingItemsDataManagerOutputProtocol {
-    func didGetItems(_ items: [Item]) {
-        presenter?.didGetItems(items)
-    }
-    
     func onSuccessfulUpdate() {
+        updateShopTotalCost()
         getItems()
     }
     
+    func didGetItems(_ items: [Item]) {
+        presenter?.didGetItems(items)
+
+    }
+
     func onError(_ message: String) {
         presenter?.onError(message)
     }
+
+    private func updateShopTotalCost() {
+        var totalPrice = 0.0
+        selectedShop?.items.forEach { item in
+            totalPrice = totalPrice + item.price * Double(item.quantity)
+        }
+
+        if let selectedShop = selectedShop {
+            let newShop = Shop()
+            newShop.name  = selectedShop.name
+            newShop.totaltPrice = totalPrice
+            shopDataManager?.updateShop(from: selectedShop, to: newShop)
+        }
+    }
+}
+
+extension ShoppingItemsInteractor: ShopListDataManagerOutputProtocol {
+    func didGetShops(_ shops: [Shop]) {
+        // not used
+    }
+    
+    func onSuccessfulShopListUpdate() {
+        selectedShop = shopDataManager?.getShopSync(shopName: selectedShop!.name)
+        presenter?.updateSelectedShopTotal(total: selectedShop!.totaltPrice)
+    }
+
 }
 
 

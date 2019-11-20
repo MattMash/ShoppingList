@@ -35,6 +35,26 @@ class ShoppingItemsPresenter: ShoppingItemsPresenterProtocol {
         newItem.dateCreated = item.dateCreated
         newItem.done = item.done
         newItem.order = item.order
+        
+        
+        // check quantity
+        if let quantity = Int(item.quantity) {
+            newItem.quantity = quantity
+        } else {
+            print("Cannot convert quantity string to integer")
+            view?.showError("Quantity must be a number")
+        }
+        
+        // check price
+        if let price = Double(item.price) {
+            newItem.price = price
+        } else {
+            print("Cannot convert price string to integer")
+            view?.showError("Price must be a number")
+        }
+        
+        
+        
         return newItem
     }
     
@@ -44,6 +64,10 @@ class ShoppingItemsPresenter: ShoppingItemsPresenterProtocol {
         newItem.dateCreated = item.dateCreated
         newItem.done = item.done
         newItem.order = item.order
+        
+        newItem.price = String(item.price)
+        newItem.quantity = String(item.quantity)
+        
         return newItem
     }
     
@@ -51,6 +75,10 @@ class ShoppingItemsPresenter: ShoppingItemsPresenterProtocol {
 }
 
 extension ShoppingItemsPresenter: ShoppingItemsInteractorOutputProtocol {
+    func updateSelectedShopTotal(total: Double) {
+        view?.updateSelectedShopTotal(total: total)
+    }
+    
     func didGetItems(_ items: [Item]) {
         let models =  items.map { item -> ShopItemModel in
             return mapItem(item)

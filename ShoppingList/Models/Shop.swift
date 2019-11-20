@@ -12,6 +12,7 @@ import RealmSwift
 class Shop: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var colour: String = ""
+    @objc dynamic var totaltPrice = 0.0
     let items = List<Item>()
     
 }

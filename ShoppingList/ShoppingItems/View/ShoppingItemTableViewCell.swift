@@ -23,6 +23,8 @@ class ShoppingItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemTitleCenterYConstraint: NSLayoutConstraint!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var deleteViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var priceTextfield: UITextField!
+    @IBOutlet weak var quantityTextfield: UITextField!
     
     private var deleteState = false
     private var maxDeleteWidth: CGFloat = 80.0
@@ -127,6 +129,8 @@ class ShoppingItemTableViewCell: UITableViewCell {
             self?.layoutIfNeeded()
         }){ _ in
             // save item
+            self.shopItem?.quantity = self.quantityTextfield.text ?? "0"
+            self.shopItem?.price = self.priceTextfield.text ?? "0"
             self.delegate?.updateItem(item: self.shopItem, for: self.row)
         }
     }
@@ -148,7 +152,7 @@ class ShoppingItemTableViewCell: UITableViewCell {
     }
     
     private func setDeleteViewWidth() {
-        if (pan.state == UIGestureRecognizer.State.changed) {
+//        if (pan.state == UIGestureRecognizer.State.changed) {
             let p: CGPoint = pan.translation(in: self)
 
             // not delete state
@@ -177,24 +181,24 @@ class ShoppingItemTableViewCell: UITableViewCell {
                 
             }
             
-        }
+//        }
     }
     
     @objc
     func onPan(_ pan: UIPanGestureRecognizer) {
         if pan.state == UIGestureRecognizer.State.began {
-            if (!deleteState) {deleteViewWidthConstraint.constant = 8}
         } else if pan.state == UIGestureRecognizer.State.changed {
             setDeleteViewWidth()
             self.setNeedsLayout()
         } else {
-            if abs(pan.velocity(in: self).x) > 500 {
+//            if abs(pan.velocity(in: self).x) > 500 {
                 //                   let collectionView: UICollectionView = self.superview as! UICollectionView
                 //                   let indexPath: IndexPath = collectionView.indexPathForItem(at: self.center)!
                 //                   collectionView.delegate?.collectionView!(collectionView, performAction: #selector(onPan(_:)), forItemAt: indexPath, withSender: nil)
-            } else {
+//            } else {
                 if (deleteViewWidthConstraint.constant >= maxDeleteWidth) {
                     deleteState = true
+                    deleteViewWidthConstraint.constant = maxDeleteWidth
                 } else if (deleteViewWidthConstraint.constant <= 0) {
                     deleteState = false
                     deleteViewWidthConstraint.constant = 0
@@ -207,7 +211,7 @@ class ShoppingItemTableViewCell: UITableViewCell {
                     self.layoutIfNeeded()
                 })
             }
-        }
+//        }
     }
     
     func configureFor(item: ShopItemModel, row: Int) {
@@ -221,7 +225,16 @@ class ShoppingItemTableViewCell: UITableViewCell {
         cardView.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
         cardView.layer.shadowOpacity = 0.5
         
+        self.totalPriceLabel.text = calculateTotalPrice()
+        priceTextfield.text = shopItem?.price
+        quantityTextfield.text = shopItem?.quantity
+        
         backgroundColor = UIColor(hexString: "E5B0EA")
+    }
+    
+    private func calculateTotalPrice() -> String {
+        let price = (Double(shopItem!.price) ?? 0.0) * (Double(shopItem!.quantity) ?? 0.0)
+        return "R\(price)"
     }
     
 }

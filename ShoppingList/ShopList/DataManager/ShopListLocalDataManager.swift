@@ -29,8 +29,9 @@ class ShopListLocalDataManager: ShopListDataManagerInputProtocol {
             try self.realm.write {
                 oldShop.colour = newShop.colour
                 oldShop.name = newShop.name
+                oldShop.totaltPrice = newShop.totaltPrice
             }
-            interactor?.onSuccessfulUpdate()
+            interactor?.onSuccessfulShopListUpdate()
         }  catch {
             print(error)
             interactor?.onError("Error updating shop context")
@@ -53,7 +54,7 @@ class ShopListLocalDataManager: ShopListDataManagerInputProtocol {
             try realm.write {
                 realm.add(shop)
             }
-            interactor?.onSuccessfulUpdate()
+            interactor?.onSuccessfulShopListUpdate()
         } catch {
             print("Error saving shops context")
             print(error)

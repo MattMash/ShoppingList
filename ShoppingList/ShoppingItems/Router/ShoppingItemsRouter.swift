@@ -18,6 +18,7 @@ class ShoppingItemsRouter: ShoppingItemsRouterProtocol {
         let shopDataSource = ShopListLocalDataManager()
         let itemDataSource = ShoppingItemsDataManager()
         
+        shopDataSource.interactor = interactor
         shoppingItemsVC.presenter = presenter
         presenter.interactor = interactor
         presenter.view = shoppingItemsVC

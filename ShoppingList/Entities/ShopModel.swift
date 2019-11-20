@@ -12,5 +12,5 @@ import UIKit
 class ShopModel {
     var name: String = ""
     var image: UIImage?
-    var totalCost: Int = 0
+    var totalCost = 0.0
 }

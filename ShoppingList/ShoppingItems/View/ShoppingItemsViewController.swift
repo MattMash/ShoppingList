@@ -33,6 +33,8 @@ class ShoppingItemsViewController: UIViewController, ShoppingItemsViewProtocol, 
         
         // interactor must have selected shop set as well
         presenter?.loadItems()
+        
+        totalCostLabel.text = "R" + String(self.selectedShop?.totalCost ?? 0.0)
     }
     
     fileprivate func setupTableView() {
@@ -79,6 +81,10 @@ class ShoppingItemsViewController: UIViewController, ShoppingItemsViewProtocol, 
     func showItems(_ items: [ShopItemModel]) {
         self.items = items
         itemsTableView.reloadData()
+    }
+    
+    func updateSelectedShopTotal(total: Double) {
+        totalCostLabel.text = "R\(total)"
     }
     
     func showLoading() {

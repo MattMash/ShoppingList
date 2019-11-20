@@ -215,6 +215,7 @@
                     <navigationItem key="navigationItem" id="K7I-dd-UNx"/>
                     <connections>
                         <outlet property="shopsCollectionView" destination="brJ-2F-gZx" id="83x-UI-j3M"/>
+                        <outlet property="totalCost" destination="7FG-mf-2hw" id="FLa-aj-wO1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BId-la-C2W" userLabel="First Responder" sceneMemberID="firstResponder"/>

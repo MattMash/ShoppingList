@@ -59,7 +59,7 @@
                                             <constraint firstAttribute="height" constant="30" id="emP-af-WDY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apz-ml-c96" userLabel="Price Textfield">
                                         <rect key="frame" x="143" y="8" width="38" height="30"/>
@@ -149,6 +149,8 @@
                 <outlet property="editView" destination="upq-mO-6QZ" id="EQI-ED-hkt"/>
                 <outlet property="itemTitle" destination="UXl-YV-2zG" id="DkP-Gu-SUg"/>
                 <outlet property="itemTitleCenterYConstraint" destination="MoO-EZ-74m" id="2tD-OW-dVe"/>
+                <outlet property="priceTextfield" destination="apz-ml-c96" id="v7o-p6-Xjl"/>
+                <outlet property="quantityTextfield" destination="MFg-gi-LrI" id="0rx-Jd-La3"/>
                 <outlet property="totalPriceLabel" destination="qB5-U1-tDb" id="hSI-mD-HLG"/>
             </connections>
             <point key="canvasLocation" x="331.8840579710145" y="109.82142857142857"/>

@@ -44,7 +44,7 @@ extension ShopListInteractor: ShopListDataManagerOutputProtocol {
         presenter?.didGetShops(shops)
     }
     
-    func onSuccessfulUpdate() {
+    func onSuccessfulShopListUpdate() {
         localDataManager?.getShops()
     }
     

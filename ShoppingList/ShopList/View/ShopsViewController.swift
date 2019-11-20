@@ -11,6 +11,7 @@ import UIKit
 class ShopsViewController: UIViewController, ShopListViewProtocol {
     var presenter: ShopListPresenterProtocol?
     @IBOutlet weak var shopsCollectionView: UICollectionView!
+    @IBOutlet weak var totalCost: UILabel!
     
     private let shopReuseIdentifier = "ShopViewCell"
     private let addReuseIdentifier = "AddShopCell"
@@ -32,15 +33,17 @@ class ShopsViewController: UIViewController, ShopListViewProtocol {
      
         shopsCollectionView.dataSource = self
         shopsCollectionView.delegate = self
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter?.getShops()
-        
     }
     
     // MARK: - Shop List View Protocol
     
     func showShops(_ shops: [ShopModel]) {
         shopList = shops
+        updateTotalLabel()
         shopsCollectionView.reloadData()
     }
     
@@ -58,6 +61,14 @@ class ShopsViewController: UIViewController, ShopListViewProtocol {
     
     func showNoShopsView() {
         //TODO:
+    }
+    
+    private func updateTotalLabel() {
+        var total = 0.0
+        shopList.forEach{shop in
+            total = total + shop.totalCost
+        }
+        totalCost.text = "R" + String(total)
     }
 
     /*

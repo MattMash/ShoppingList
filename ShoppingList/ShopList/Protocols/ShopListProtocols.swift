@@ -89,7 +89,7 @@ protocol ShopListDataManagerInputProtocol: class {
 protocol ShopListDataManagerOutputProtocol {
     func didGetShops(_ shops: [Shop])
     
-    func onSuccessfulUpdate()
+    func onSuccessfulShopListUpdate()
     
     func onError(_ message: String)
 }

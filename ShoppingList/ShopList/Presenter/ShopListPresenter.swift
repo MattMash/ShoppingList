@@ -39,12 +39,14 @@ class ShopListPresenter: ShopListPresenterProtocol {
         let shopModel = ShopModel()
         shopModel.name = shop.name
         shopModel.image = getShopImage(shop.name) ?? UIImage(named: "shopping-cart")
+        shopModel.totalCost = shop.totaltPrice
         return shopModel
     }
     
     private func mapModel(_ model: ShopModel) -> Shop {
         let shop = Shop()
         shop.name = model.name
+        shop.totaltPrice = model.totalCost
         return shop
     }
     

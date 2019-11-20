@@ -13,6 +13,8 @@ protocol ShoppingItemsViewProtocol: class {
     var selectedShop: ShopModel? { get set }
     var presenter: ShoppingItemsPresenterProtocol? { get set }
 
+    func updateSelectedShopTotal(total: Double)
+    
     func showItems(_ items: [ShopItemModel])
    
     func showLoading()
@@ -53,6 +55,8 @@ protocol ShoppingItemsInteractorInputProtocol {
 protocol ShoppingItemsInteractorOutputProtocol {
     
     func didGetItems(_ items: [Item])
+    
+    func updateSelectedShopTotal(total: Double)
     
     func onError(_ message: String)
 }

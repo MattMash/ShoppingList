@@ -36,6 +36,8 @@ class ShoppingItemsDataManager: ShoppingItemsDataManagerInputProtocol {
                 item.title = newItem.title
                 item.done = newItem.done
                 item.order = newItem.order
+                item.price = newItem.price
+                item.quantity = newItem.quantity
             }
             interactor?.onSuccessfulUpdate()
         }  catch {
